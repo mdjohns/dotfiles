@@ -10,3 +10,6 @@ opt.expandtab = true
 
 opt.ignorecase = true
 opt.smartcase = true
+
+opt.completeopt = { 'menu', 'menuone', 'noselect' }
+opt.shortmess:append 'c'
