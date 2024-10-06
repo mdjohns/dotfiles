@@ -2,6 +2,7 @@ HISTFILE=~/.histfile
 HISTSIZE=50000
 SAVEHIST=10000
 
+# vim mode
 bindkey -v
 
 zstyle :compinstall filename '/home/dylan/.zshrc'
@@ -12,10 +13,11 @@ source ~/.aliases
 
 export EDITOR=nvim
 
+# fzf
 source <(fzf --zsh)
 
 # Starship shell
 eval "$(starship init zsh)"
 
-# Zoxide (better cd)
+# Zoxide 
 eval "$(zoxide init zsh)"

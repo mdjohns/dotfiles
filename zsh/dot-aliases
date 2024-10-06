@@ -12,3 +12,4 @@ alias lg="lazygit"
 
 # Commands
 alias srz="source ~/.zshrc"
+alias sdt="stow --dotfiles"
