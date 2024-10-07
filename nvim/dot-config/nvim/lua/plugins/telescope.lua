@@ -9,23 +9,8 @@ return {
 	},
 	tag = '0.1.8',
 	opts = {
-		layout_strategy = 'vertical',
-		pickers = {
-			find_files = {
-				file_ignore_patterns = { 'node_modules', '.git' },
-				hidden = true,
-			},
-			live_grep = {
-				file_ignore_patterns = { 'node_modules', '.git' },
-				hidden = true,
-			},
-		},
-		extensions = {
-			menufacture = {
-				mappings = {
-					toggle_hidden = { i = '<C-.>' },
-				},
-			},
+		defaults = {
+			layout_strategy = 'vertical',
 		},
 	},
 	keys = {
@@ -49,5 +34,17 @@ return {
 		local telescope = require 'telescope'
 		telescope.setup(opts)
 		telescope.load_extension 'fzf'
+
+		local actions = require 'telescope.actions'
+
+		vim.keymap.set('n', '<C-n>', function()
+			local bufnr = vim.api.nvim_get_current_buf()
+			actions.move_selection_next(bufnr)
+		end)
+
+		vim.keymap.set('n', '<C-p>', function()
+			local bufnr = vim.api.nvim_get_current_buf()
+			actions.move_selection_previous(bufnr)
+		end)
 	end,
 }
