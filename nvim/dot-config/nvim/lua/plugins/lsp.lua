@@ -28,6 +28,7 @@ return {
 				},
 			},
 			lua_ls = true,
+			vtsls = true,
 		}
 
 		local servers_to_install = vim.tbl_filter(function(key)
@@ -40,6 +41,7 @@ return {
 		end, vim.tbl_keys(servers))
 
 		local ensure_installed = {
+			'biome',
 			'stylua',
 			'prettierd',
 			'eslint_d',

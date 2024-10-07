@@ -1,7 +1,10 @@
 return {
 	'mfussenegger/nvim-lint',
 	config = function()
-		require('lint').linters_by_ft = {}
+		require('lint').linters_by_ft = {
+			javascript = { 'biomejs' },
+			typescript = { 'biomejs' },
+		}
 
 		vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost' }, {
 			callback = function()

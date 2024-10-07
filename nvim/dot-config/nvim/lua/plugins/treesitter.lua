@@ -8,8 +8,10 @@ return {
 
 		configs.setup {
 			ensure_installed = {
+				'javascript',
 				'lua',
 				'toml',
+				'typescript',
 				'vim',
 				'vimdoc',
 			},
