@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
 	'neovim/nvim-lspconfig',
 	dependencies = {
@@ -5,6 +6,7 @@ return {
 		{ 'williamboman/mason-lspconfig.nvim' },
 		{ 'WhoIsSethDaniel/mason-tool-installer.nvim' },
 		{ 'folke/neodev.nvim', ft = 'lua' },
+		{ 'b0o/SchemaStore.nvim' },
 	},
 	config = function()
 		require('mason').setup()
@@ -17,6 +19,14 @@ return {
 
 		---@type table<string, boolean | table>
 		local servers = {
+			jsonls = {
+				settings = {
+					json = {
+						schemas = require('schemastore').json.schemas(),
+						validate = { enable = true },
+					},
+				},
+			},
 			lua_ls = true,
 		}
 
