@@ -60,5 +60,18 @@ return {
 
 			lspconfig[name].setup(config)
 		end
+
+		vim.api.nvim_create_autocmd('LspAttach', {
+			callback = function(args)
+				vim.opt_local.omnifunc = 'v:lua.vim.lsp.omnifunc'
+				vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = 0 })
+				vim.keymap.set('n', 'gr', vim.lsp.buf.references, { buffer = 0 })
+				vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = 0 })
+				vim.keymap.set('n', 'gT', vim.lsp.buf.type_definition, { buffer = 0 })
+				vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
+				vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { buffer = 0 })
+				vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = 0 })
+			end,
+		})
 	end,
 }
