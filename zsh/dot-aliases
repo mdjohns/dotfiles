@@ -1,5 +1,6 @@
 # Git 
 alias gco="git checkout"
+alias gcf="git clean -f -d"
 alias gl="git pull"
 alias gp="git push"
 alias gpf="git push --force-with-lease"
