@@ -85,6 +85,7 @@ local function get_attached_clients()
 end
 
 return {
+	---@type LazyPluginSpec
 	{
 		'rose-pine/neovim',
 		name = 'rose-pine',
@@ -95,6 +96,7 @@ return {
 			vim.cmd.colorscheme 'rose-pine'
 		end,
 	},
+	---@type LazyPluginSpec
 	{
 		'nvim-lualine/lualine.nvim',
 		event = { 'VimEnter', 'BufReadPost', 'BufNewFile' },
@@ -130,5 +132,11 @@ return {
 				},
 			}
 		end,
+	},
+	---@type LazyPluginSpec
+	event = { 'VimEnter', 'BufReadPost', 'BufNewFile' },
+	{
+		'mvllow/modes.nvim',
+		config = true,
 	},
 }
