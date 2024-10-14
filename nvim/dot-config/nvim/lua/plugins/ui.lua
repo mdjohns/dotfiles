@@ -10,30 +10,12 @@ local function get_attached_clients()
 	local buf_ft = vim.bo.filetype
 	local buf_client_names = {}
 
-	-- add client
+	-- add LSP client
 	for _, client in pairs(buf_clients) do
 		if client.name ~= 'copilot' and client.name ~= 'null-ls' then
 			table.insert(buf_client_names, client.name)
 		end
 	end
-
-	-- Generally, you should use either null-ls or nvim-lint + formatter.nvim, not both.
-
-	-- Add sources (from null-ls)
-	-- null-ls registers each source as a separate attached client, so we need to filter for unique names down below.
-	-- local null_ls_s, null_ls = pcall(require, 'null-ls')
-	-- if null_ls_s then
-	-- 	local sources = null_ls.get_sources()
-	-- 	for _, source in ipairs(sources) do
-	-- 		if source._validated then
-	-- 			for ft_name, ft_active in pairs(source.filetypes) do
-	-- 				if ft_name == buf_ft and ft_active then
-	-- 					table.insert(buf_client_names, source.name)
-	-- 				end
-	-- 			end
-	-- 		end
-	-- 	end
-	-- end
 
 	-- Add linters (from nvim-lint)
 	local lint_s, lint = pcall(require, 'lint')
@@ -53,13 +35,13 @@ local function get_attached_clients()
 		end
 	end
 
-	-- Add formatters (from formatter.nvim)
-	local formatter_s, _ = pcall(require, 'formatter')
-	if formatter_s then
-		local formatter_util = require 'formatter.util'
-		for _, formatter in ipairs(formatter_util.get_available_formatters_for_ft(buf_ft)) do
+	-- Add formatters (from conform.nvim)
+	local conform_available, _ = pcall(require, 'conform')
+	if conform_available then
+		local conform = require 'conform'
+		for _, formatter in ipairs(conform.list_formatters_to_run(vim.api.nvim_get_current_buf())) do
 			if formatter then
-				table.insert(buf_client_names, formatter)
+				table.insert(buf_client_names, formatter.name)
 			end
 		end
 	end
