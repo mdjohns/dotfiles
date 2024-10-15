@@ -28,6 +28,7 @@ return {
 				},
 			},
 			lua_ls = true,
+			marksman = true,
 			vtsls = true,
 		}
 
