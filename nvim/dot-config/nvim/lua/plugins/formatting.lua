@@ -33,9 +33,11 @@ return {
 
 		require('conform').setup {
 			formatters_by_ft = {
+				graphql = { 'prettierd' },
 				lua = { 'stylua' },
 				javascript = js_formatters,
 				javascriptreact = js_formatters,
+				markdown = { 'injected' },
 				typescript = js_formatters,
 				typescriptreact = js_formatters,
 			},
@@ -53,7 +55,15 @@ return {
 					require_cwd = true,
 				},
 				prettierd = {
-					cwd = prettier_cwd,
+					cwd = function(self, ctx)
+						local is_markdown = vim.bo.filetype == 'markdown'
+
+						if is_markdown then
+							return ctx.dirname
+						end
+
+						return prettier_cwd(self, ctx)
+					end,
 					require_cwd = true,
 				},
 			},
