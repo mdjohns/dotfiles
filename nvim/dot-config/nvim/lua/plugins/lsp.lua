@@ -29,6 +29,7 @@ return {
 			},
 			lua_ls = true,
 			marksman = true,
+			rust_analyzer = true,
 			vtsls = true,
 		}
 
