@@ -1,0 +1,12 @@
+{
+  "details": {
+    "prefix": "details",
+    "body": [
+      "<details>",
+      "\t<summary>$1</summary>",
+      "\t$2",
+      "</details>"
+    ],
+    "description": "HTML - Defines details of an element"
+  }
+}

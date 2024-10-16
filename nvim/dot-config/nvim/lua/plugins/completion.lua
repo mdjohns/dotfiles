@@ -4,11 +4,14 @@ return {
 		'saghen/blink.cmp',
 		lazy = false,
 		build = 'cargo build --release',
+		---@type blink.cmp.Config
 		opts = {
 			keymap = {
 				accept = '<C-y>',
 				select_next = '<C-n>',
 				select_prev = '<C-p>',
+				snippet_forward = '<C-j>',
+				snippet_backward = '<C-k>',
 			},
 			windows = {
 				autocomplete = {
