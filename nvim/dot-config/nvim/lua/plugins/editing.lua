@@ -1,12 +1,11 @@
+---@type LazyPluginSpec[]
 return {
-	---@type LazyPluginSpec
 	{
 
 		'nvimdev/hlsearch.nvim',
 		event = 'BufRead',
 		config = true,
 	},
-	---@type LazyPluginSpec
 	{
 		'kylechui/nvim-surround',
 		version = '*',
@@ -14,6 +13,12 @@ return {
 		opts = {
 			move_cursor = false,
 		},
+		config = true,
+	},
+	{
+		'echasnovski/mini.pairs',
+		version = false,
+		event = 'VeryLazy',
 		config = true,
 	},
 }
