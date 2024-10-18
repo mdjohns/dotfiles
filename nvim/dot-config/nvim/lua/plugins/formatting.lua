@@ -29,6 +29,7 @@ return {
 			'.eslintrc.mjs',
 			'.eslintrc.json',
 			'eslint.config.js',
+			'eslint.config.mjs',
 		}
 
 		require('conform').setup {
