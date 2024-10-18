@@ -27,6 +27,7 @@ return {
 					},
 				},
 			},
+			graphql = true,
 			lua_ls = true,
 			marksman = true,
 			rust_analyzer = true,

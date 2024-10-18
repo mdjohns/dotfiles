@@ -34,7 +34,7 @@ return {
 
 		require('conform').setup {
 			formatters_by_ft = {
-				graphql = { 'prettierd' },
+				graphql = js_formatters,
 				lua = { 'stylua' },
 				javascript = js_formatters,
 				javascriptreact = js_formatters,
