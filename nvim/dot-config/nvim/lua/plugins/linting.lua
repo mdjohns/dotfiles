@@ -12,9 +12,7 @@ return {
 
 		vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost' }, {
 			callback = function()
-				if pcall(require, 'lint') then
-					require('lint').try_lint()
-				end
+				pcall(require, 'lint.try_lint')
 			end,
 		})
 	end,
