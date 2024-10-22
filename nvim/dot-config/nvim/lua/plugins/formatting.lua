@@ -39,6 +39,7 @@ return {
 				javascript = js_formatters,
 				javascriptreact = js_formatters,
 				markdown = { 'injected' },
+				sh = { 'shfmt' },
 				typescript = js_formatters,
 				typescriptreact = js_formatters,
 			},

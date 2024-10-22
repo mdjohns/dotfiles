@@ -6,6 +6,7 @@ return {
 			graphql = js_linters,
 			javascript = js_linters,
 			javascriptreact = js_linters,
+			sh = { 'shellcheck' },
 			typescript = js_linters,
 			typescriptreact = js_linters,
 		}

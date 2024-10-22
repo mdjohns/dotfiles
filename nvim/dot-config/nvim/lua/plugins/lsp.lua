@@ -19,6 +19,7 @@ return {
 
 		---@type table<string, boolean | table>
 		local servers = {
+			bashls = true,
 			jsonls = {
 				settings = {
 					json = {
