@@ -1,7 +1,7 @@
 {
   "SchemaStore.nvim": { "branch": "main", "commit": "f4988f1b370600f87ad8549e68dd6e4914db31ca" },
   "arrow.nvim": { "branch": "master", "commit": "5438c977e729a29d96bd54c8da3103154e80dbd1" },
-  "blink.cmp": { "branch": "main", "commit": "1a55fd1e03193e10cb8bc866cc2bc47c9473061c" },
+  "blink.cmp": { "branch": "main", "commit": "f0f26728c3e5c65cf2d27a1b24e4e3fbd26773fb" },
   "conform.nvim": { "branch": "master", "commit": "6a28c90082a67f62a323ab90d988e000a718a8c7" },
   "gitsigns.nvim": { "branch": "main", "commit": "2d725fdd7fe4a612fa3171ca0a965f455d8dc325" },
   "hlsearch.nvim": { "branch": "main", "commit": "fdeb60b890d15d9194e8600042e5232ef8c29b0e" },
