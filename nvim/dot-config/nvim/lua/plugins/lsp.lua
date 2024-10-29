@@ -7,13 +7,14 @@ return {
 		{ 'WhoIsSethDaniel/mason-tool-installer.nvim' },
 		{ 'folke/neodev.nvim', ft = 'lua' },
 		{ 'b0o/SchemaStore.nvim' },
+		{ 'Saghen/blink.cmp' },
 	},
 	config = function()
 		require('mason').setup()
 		local lspconfig = require 'lspconfig'
 		local capabilities = nil
-		if pcall(require, 'cmp_nvim_lsp') then
-			capabilities = require('cmp_nvim_lsp').default_capabilities()
+		if pcall(require, 'blink-cmp') then
+			capabilities = require('blink-cmp').get_lsp_capabilities()
 		end
 		require('neodev').setup {}
 
