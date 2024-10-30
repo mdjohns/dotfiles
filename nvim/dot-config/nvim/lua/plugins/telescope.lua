@@ -15,6 +15,11 @@ return {
 	},
 	keys = {
 		{
+			'<leader><leader>',
+			'<cmd>Telescope git_files theme=dropdown<cr>',
+			desc = 'Git Files',
+		},
+		{
 			'<leader>ff',
 			'<cmd>Telescope find_files theme=dropdown<cr>',
 			desc = 'Find Files',
