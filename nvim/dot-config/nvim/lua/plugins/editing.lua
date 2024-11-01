@@ -21,4 +21,8 @@ return {
 		event = 'VeryLazy',
 		config = true,
 	},
+	{
+		'Rrethy/vim-illuminate',
+		event = 'BufRead',
+	},
 }
