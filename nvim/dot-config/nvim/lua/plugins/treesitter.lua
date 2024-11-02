@@ -10,6 +10,7 @@ return {
 			ensure_installed = {
 				'javascript',
 				'lua',
+				'svelte',
 				'toml',
 				'typescript',
 				'vim',

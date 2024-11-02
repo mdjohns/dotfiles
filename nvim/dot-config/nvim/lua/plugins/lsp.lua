@@ -32,6 +32,7 @@ return {
 			graphql = true,
 			lua_ls = true,
 			marksman = true,
+			svelte = true,
 			rust_analyzer = true,
 			vtsls = true,
 		}
@@ -47,9 +48,10 @@ return {
 
 		local ensure_installed = {
 			'biome',
-			'stylua',
-			'prettierd',
 			'eslint_d',
+			'prettierd',
+			'stylua',
+			'svelte-language-server',
 		}
 		vim.list_extend(ensure_installed, servers_to_install)
 

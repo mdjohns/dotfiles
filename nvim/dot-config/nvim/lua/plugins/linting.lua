@@ -7,6 +7,7 @@ return {
 			javascript = js_linters,
 			javascriptreact = js_linters,
 			sh = { 'shellcheck' },
+			svelte = js_linters,
 			typescript = js_linters,
 			typescriptreact = js_linters,
 		}

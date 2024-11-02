@@ -40,6 +40,7 @@ return {
 				javascriptreact = js_formatters,
 				markdown = { 'injected' },
 				sh = { 'shfmt' },
+				svelte = js_formatters,
 				typescript = js_formatters,
 				typescriptreact = js_formatters,
 			},
