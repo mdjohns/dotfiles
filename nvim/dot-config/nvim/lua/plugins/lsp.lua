@@ -27,6 +27,10 @@ return {
 						schemas = require('schemastore').json.schemas(),
 						validate = { enable = true },
 					},
+					yaml = {
+						schemas = require('schemastore').yaml.schemas(),
+						validate = { enable = true },
+					},
 				},
 			},
 			graphql = true,
@@ -35,6 +39,7 @@ return {
 			svelte = true,
 			rust_analyzer = true,
 			vtsls = true,
+			yamlls = true,
 		}
 
 		local servers_to_install = vim.tbl_filter(function(key)
@@ -52,6 +57,7 @@ return {
 			'prettierd',
 			'stylua',
 			'svelte-language-server',
+			'yaml-language-server',
 		}
 		vim.list_extend(ensure_installed, servers_to_install)
 

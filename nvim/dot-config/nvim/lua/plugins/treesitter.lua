@@ -15,6 +15,7 @@ return {
 				'typescript',
 				'vim',
 				'vimdoc',
+				'yaml',
 			},
 			highlight = { enable = true },
 			indent = { enable = true },
