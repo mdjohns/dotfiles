@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
 	'nvim-telescope/telescope.nvim',
 	dependencies = {
@@ -8,6 +9,7 @@ return {
 		},
 	},
 	tag = '0.1.8',
+	lazy = false,
 	opts = {
 		defaults = {
 			layout_strategy = 'vertical',
