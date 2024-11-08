@@ -1,6 +1,4 @@
 palette = "rose-pine"
-format = """$character"""
-right_format = """$all"""
 
 [palettes.rose-pine]
 overlay = '#26233a'
