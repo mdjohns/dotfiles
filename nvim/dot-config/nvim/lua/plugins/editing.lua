@@ -25,4 +25,9 @@ return {
 		'Rrethy/vim-illuminate',
 		event = 'BufRead',
 	},
+	{
+		'mcauley-penney/visual-whitespace.nvim',
+		event = 'BufRead',
+		config = true,
+	},
 }
