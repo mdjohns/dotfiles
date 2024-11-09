@@ -37,6 +37,7 @@ return {
 			lua_ls = true,
 			marksman = true,
 			svelte = true,
+			taplo = true,
 			rust_analyzer = true,
 			vtsls = true,
 			yamlls = true,
@@ -59,6 +60,7 @@ return {
 			'prettierd',
 			'stylua',
 			'svelte-language-server',
+			'taplo',
 			'yaml-language-server',
 		}
 		vim.list_extend(ensure_installed, servers_to_install)
