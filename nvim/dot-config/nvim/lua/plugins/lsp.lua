@@ -52,8 +52,10 @@ return {
 		end, vim.tbl_keys(servers))
 
 		local ensure_installed = {
+			'bashls',
 			'biome',
 			'eslint_d',
+			'jsonls',
 			'prettierd',
 			'stylua',
 			'svelte-language-server',
