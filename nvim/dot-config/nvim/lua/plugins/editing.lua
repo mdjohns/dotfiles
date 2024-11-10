@@ -30,4 +30,11 @@ return {
 		event = 'BufRead',
 		config = true,
 	},
+	{
+		'DanilaMihailov/beacon.nvim',
+		event = 'BufRead',
+		opts = {
+			width = 20,
+		},
+	},
 }
