@@ -88,6 +88,7 @@ return {
 				vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
 				vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { buffer = 0 })
 				vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = 0 })
+				vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float, { buffer = 0 })
 			end,
 		})
 	end,
