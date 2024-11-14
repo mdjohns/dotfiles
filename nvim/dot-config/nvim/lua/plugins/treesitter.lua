@@ -8,6 +8,7 @@ return {
 
 		configs.setup {
 			ensure_installed = {
+				'css',
 				'javascript',
 				'lua',
 				'svelte',
