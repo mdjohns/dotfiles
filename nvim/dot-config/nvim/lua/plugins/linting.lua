@@ -3,6 +3,7 @@ return {
 	'mfussenegger/nvim-lint',
 	config = function()
 		require('lint').linters_by_ft = {
+			astro = js_linters,
 			graphql = js_linters,
 			javascript = js_linters,
 			javascriptreact = js_linters,

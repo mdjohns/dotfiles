@@ -34,6 +34,7 @@ return {
 
 		require('conform').setup {
 			formatters_by_ft = {
+				astro = js_formatters,
 				graphql = js_formatters,
 				lua = { 'stylua' },
 				javascript = js_formatters,

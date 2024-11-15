@@ -20,6 +20,7 @@ return {
 
 		---@type table<string, boolean | table>
 		local servers = {
+			astro = true,
 			bashls = true,
 			jsonls = {
 				settings = {
@@ -53,6 +54,7 @@ return {
 		end, vim.tbl_keys(servers))
 
 		local ensure_installed = {
+			'astro',
 			'bashls',
 			'biome',
 			'eslint_d',
