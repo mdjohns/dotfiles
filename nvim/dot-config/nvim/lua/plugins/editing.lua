@@ -7,12 +7,9 @@ return {
 		config = true,
 	},
 	{
-		'kylechui/nvim-surround',
-		version = '*',
+		'echasnovski/mini.surround',
+		version = false,
 		event = 'VeryLazy',
-		opts = {
-			move_cursor = false,
-		},
 		config = true,
 	},
 	{
