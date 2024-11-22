@@ -12,6 +12,7 @@ return {
 	lazy = false,
 	opts = {
 		defaults = {
+			dynamic_preview_title = true,
 			layout_strategy = 'vertical',
 		},
 	},
@@ -35,6 +36,11 @@ return {
 			'<leader>fh',
 			'<cmd>Telescope help_tags theme=dropdown<cr>',
 			desc = 'Find Files',
+		},
+		{
+			'gr',
+			'<cmd>Telescope lsp_references show_line=false<cr>',
+			desc = 'Find LSP references',
 		},
 	},
 	config = function(opts)
