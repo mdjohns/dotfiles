@@ -1,5 +1,5 @@
+---@type LazyPluginSpec[]
 return {
-	---@type LazyPluginSpec
 	{
 		'lewis6991/gitsigns.nvim',
 		event = 'BufRead',
@@ -7,22 +7,20 @@ return {
 			current_line_blame = true,
 		},
 	},
-	---@type LazyPluginSpec
 	{
-		'kdheepak/lazygit.nvim',
-		lazy = true,
-		cmd = {
-			'LazyGit',
-			'LazyGitConfig',
-			'LazyGitCurrentFile',
-			'LazyGitFilter',
-			'LazyGitFilterCurrentFile',
+		'NeogitOrg/neogit',
+		keys = {
+			{
+				'<leader>ng',
+				'<cmd>Neogit<cr>',
+				desc = 'Open Neogit',
+			},
 		},
 		dependencies = {
 			'nvim-lua/plenary.nvim',
+			'sindrets/diffview.nvim',
+			'nvim-telescope/telescope.nvim',
 		},
-		keys = {
-			{ '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
-		},
+		config = true,
 	},
 }
