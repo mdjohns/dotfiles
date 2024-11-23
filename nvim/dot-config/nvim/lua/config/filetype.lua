@@ -1,6 +1,7 @@
 vim.filetype.add {
 	extension = {
 		bun = 'typescript',
+		har = 'json',
 	},
 	pattern = {
 		-- dotfiles managed by `stow` will be prefixed with `dot-`
