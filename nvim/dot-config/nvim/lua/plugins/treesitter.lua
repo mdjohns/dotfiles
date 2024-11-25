@@ -14,6 +14,7 @@ return {
 					'css',
 					'javascript',
 					'lua',
+					'make',
 					'svelte',
 					'toml',
 					'typescript',
