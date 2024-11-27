@@ -18,6 +18,8 @@ return {
 		end
 		require('neodev').setup {}
 
+		vim.diagnostic.config { virtual_text = true }
+
 		---@type table<string, boolean | table>
 		local servers = {
 			astro = true,
