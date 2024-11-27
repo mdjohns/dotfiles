@@ -14,6 +14,7 @@ return {
 		defaults = {
 			dynamic_preview_title = true,
 			layout_strategy = 'vertical',
+			path_display = 'smart',
 		},
 	},
 	keys = {
