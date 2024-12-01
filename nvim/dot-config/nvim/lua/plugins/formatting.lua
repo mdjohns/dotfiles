@@ -40,6 +40,7 @@ return {
 				javascript = js_formatters,
 				javascriptreact = js_formatters,
 				markdown = { 'injected' },
+				ocaml = { 'ocamlformat' },
 				sh = { 'shfmt' },
 				svelte = js_formatters,
 				typescript = js_formatters,

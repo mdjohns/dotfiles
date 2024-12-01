@@ -24,6 +24,7 @@ return {
 		local servers = {
 			astro = true,
 			bashls = true,
+			graphql = true,
 			jsonls = {
 				settings = {
 					json = {
@@ -36,9 +37,15 @@ return {
 					},
 				},
 			},
-			graphql = true,
 			lua_ls = true,
 			marksman = true,
+			ocamllsp = {
+				manual_install = true,
+				settings = {
+					codelens = { enable = true },
+					inlayHints = { enable = true },
+				},
+			},
 			svelte = true,
 			taplo = true,
 			rust_analyzer = true,

@@ -15,6 +15,7 @@ return {
 					'javascript',
 					'lua',
 					'make',
+					'ocaml',
 					'svelte',
 					'toml',
 					'typescript',
