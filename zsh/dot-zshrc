@@ -8,6 +8,12 @@ bindkey -v
 zstyle :compinstall filename '/home/dylan/.zshrc'
 autoload -Uz compinit
 compinit
+# share command history (useful for tmux)
+setopt inc_append_history
+# don't append duplicates to the history
+setopt hist_ignore_dups
+# don't append spaces to the history
+setopt hist_ignore_space
 
 source ~/.aliases
 
