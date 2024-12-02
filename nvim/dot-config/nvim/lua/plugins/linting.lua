@@ -5,12 +5,8 @@ return {
 		require('lint').linters_by_ft = {
 			astro = js_linters,
 			graphql = js_linters,
-			javascript = js_linters,
-			javascriptreact = js_linters,
 			sh = { 'shellcheck' },
 			svelte = js_linters,
-			typescript = js_linters,
-			typescriptreact = js_linters,
 		}
 
 		vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost' }, {
