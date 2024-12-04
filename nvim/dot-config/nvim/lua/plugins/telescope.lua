@@ -8,7 +8,6 @@ return {
 			build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release',
 		},
 	},
-	tag = '0.1.8',
 	lazy = false,
 	opts = {
 		defaults = {
