@@ -9,13 +9,6 @@ return {
 		},
 	},
 	lazy = false,
-	opts = {
-		defaults = {
-			dynamic_preview_title = true,
-			layout_strategy = 'vertical',
-			path_display = 'smart',
-		},
-	},
 	keys = {
 		{
 			'<leader><leader>',
@@ -43,9 +36,14 @@ return {
 			desc = 'Find LSP references',
 		},
 	},
-	config = function(opts)
+	config = function()
 		local telescope = require 'telescope'
-		telescope.setup(opts)
+		telescope.setup {
+			defaults = {
+				dynamic_preview_title = true,
+				path_display = { 'filename_first' },
+			},
+		}
 		telescope.load_extension 'fzf'
 
 		local actions = require 'telescope.actions'
