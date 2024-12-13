@@ -19,8 +19,11 @@ return {
 				menu = {
 					border = 'rounded',
 				},
-				---@diagnostic enable: missing-fields
 			},
+			sources = {
+				cmdline = {},
+			},
+			---@diagnostic enable: missing-fields
 			keymap = {
 				['<C-y>'] = { 'accept' },
 				['<C-n>'] = { 'select_next' },
