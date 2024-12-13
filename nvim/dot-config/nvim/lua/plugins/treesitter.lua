@@ -8,6 +8,7 @@ return {
 		config = function()
 			local configs = require 'nvim-treesitter.configs'
 
+			---@diagnostic disable-next-line: missing-fields
 			configs.setup {
 				ensure_installed = {
 					'astro',
@@ -32,5 +33,22 @@ return {
 		'davidmh/mdx.nvim',
 		config = true,
 		dependencies = { 'nvim-treesitter/nvim-treesitter' },
+	},
+	{
+		'aaronik/treewalker.nvim',
+		event = 'BufRead',
+		dependencies = { 'nvim-treesitter/nvim-treesitter' },
+		config = function()
+			require('treewalker').setup {
+				highlight = true,
+			}
+
+			local map = vim.api.nvim_set_keymap
+			local opts = { noremap = true, silent = true }
+			map('n', '<M-h>', ':Treewalker Left<CR>', opts)
+			map('n', '<M-j>', ':Treewalker Down<CR>', opts)
+			map('n', '<M-k>', ':Treewalker Up<CR>', opts)
+			map('n', '<M-l>', ':Treewalker Right<CR>', opts)
+		end,
 	},
 }
