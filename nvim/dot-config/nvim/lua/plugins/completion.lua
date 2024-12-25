@@ -15,10 +15,24 @@ return {
 				},
 				menu = {
 					border = 'rounded',
+					auto_show = function(_)
+						return vim.bo.filetype ~= 'TelescopePrompt'
+					end,
 				},
 			},
 			sources = {
-				cmdline = {},
+				cmdline = function()
+					local type = vim.fn.getcmdtype()
+					-- Searching forward or backwards
+					if type == '/' or type == '?' then
+						return { 'buffer' }
+					end
+					-- Command
+					if type == ':' then
+						return { 'cmdline' }
+					end
+					return {}
+				end,
 			},
 			---@diagnostic enable: missing-fields
 			keymap = {
