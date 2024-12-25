@@ -19,6 +19,10 @@ source ~/.aliases
 
 export EDITOR=nvim
 
+# Include `~/.local/bin` in PATH
+LOCAL_BIN="$HOME/.local/bin"
+export PATH="$PATH:$LOCAL_BIN"
+
 # fzf
 source <(fzf --zsh)
 
