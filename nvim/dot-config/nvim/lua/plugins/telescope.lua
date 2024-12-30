@@ -7,6 +7,9 @@ return {
 			'nvim-telescope/telescope-fzf-native.nvim',
 			build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release',
 		},
+		{
+			'nvim-telescope/telescope-frecency.nvim',
+		},
 	},
 	lazy = false,
 	keys = {
@@ -17,8 +20,8 @@ return {
 		},
 		{
 			'<leader>ff',
-			'<cmd>Telescope find_files theme=dropdown<cr>',
-			desc = 'Find Files',
+			'<cmd>Telescope frecency workspace=CWD path_display={"filename_first"} theme=dropdown<cr>',
+			desc = 'Find Frecent Files',
 		},
 		{
 			'<leader>fg',
@@ -45,6 +48,7 @@ return {
 			},
 		}
 		telescope.load_extension 'fzf'
+		telescope.load_extension 'frecency'
 
 		local actions = require 'telescope.actions'
 
