@@ -15,7 +15,7 @@ return {
 	keys = {
 		{
 			'<leader><leader>',
-			'<cmd>Telescope git_files theme=dropdown<cr>',
+			'<cmd>Telescope git_files path_display={"filename_first"} theme=dropdown<cr>',
 			desc = 'Git Files',
 		},
 		{
