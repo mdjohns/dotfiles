@@ -130,7 +130,11 @@ return {
 	},
 	{
 		'j-hui/fidget.nvim',
-		config = true,
+		config = {
+			notification = {
+				override_vim_notify = true,
+			},
+		},
 		dependencies = { 'neovim/nvim-lspconfig' },
 		event = { 'VimEnter', 'BufReadPost', 'BufNewFile' },
 	},
