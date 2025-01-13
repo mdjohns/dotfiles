@@ -33,6 +33,7 @@
   "telescope.nvim": { "branch": "master", "commit": "415af52339215926d705cccc08145f3782c4d132" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "cdf1ac3a0ce30a4357699a6650dfae3b6ea31265" },
   "treewalker.nvim": { "branch": "main", "commit": "4992fa9d27792b7a573e4545c9b2c4e61aba4f44" },
+  "twoslash-queries.nvim": { "branch": "main", "commit": "b92622c7b71eceefabd02eef24236041069904b1" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-tmux-navigator": { "branch": "master", "commit": "d847ea942a5bb4d4fab6efebc9f30d787fd96e65" },
   "visual-whitespace.nvim": { "branch": "main", "commit": "31d0ed71ad7e376879d7e0df0c8cc4f1467702d4" }

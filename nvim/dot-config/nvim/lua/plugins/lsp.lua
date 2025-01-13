@@ -9,6 +9,13 @@ return {
 			{ 'folke/neodev.nvim', ft = 'lua' },
 			{ 'b0o/SchemaStore.nvim' },
 			{ 'Saghen/blink.cmp' },
+			{
+				'marilari88/twoslash-queries.nvim',
+				ft = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+				opts = {
+					highlight = 'EndOfBuffer',
+				},
+			},
 		},
 		config = function()
 			require('mason').setup()
@@ -50,7 +57,11 @@ return {
 				svelte = true,
 				taplo = true,
 				rust_analyzer = true,
-				vtsls = true,
+				vtsls = {
+					on_attach = function(client, bufnr)
+						require('twoslash-queries').attach(client, bufnr)
+					end,
+				},
 				yamlls = true,
 			}
 
