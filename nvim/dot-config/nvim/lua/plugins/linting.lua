@@ -4,6 +4,7 @@ return {
 	config = function()
 		require('lint').linters_by_ft = {
 			astro = js_linters,
+			bash = { 'shellcheck' },
 			graphql = js_linters,
 			sh = { 'shellcheck' },
 			svelte = js_linters,
