@@ -61,6 +61,7 @@ return {
 				lua = { 'stylua' },
 				javascript = js_formatters,
 				javascriptreact = js_formatters,
+				json = { 'prettierd' },
 				markdown = { 'injected' },
 				ocaml = { 'ocamlformat' },
 				sh = { 'shfmt' },
