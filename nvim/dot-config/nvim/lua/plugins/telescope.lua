@@ -10,6 +10,9 @@ return {
 		{
 			'nvim-telescope/telescope-frecency.nvim',
 		},
+		{
+			'nvim-telescope/telescope-ui-select.nvim',
+		},
 	},
 	lazy = false,
 	keys = {
@@ -49,6 +52,7 @@ return {
 		}
 		telescope.load_extension 'fzf'
 		telescope.load_extension 'frecency'
+		telescope.load_extension 'ui-select'
 
 		local actions = require 'telescope.actions'
 
