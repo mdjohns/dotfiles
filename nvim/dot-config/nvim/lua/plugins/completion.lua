@@ -1,9 +1,10 @@
+---@type LazyPluginSpec[]
 return {
-	---@type LazyPluginSpec
 	{
 		'saghen/blink.cmp',
 		lazy = false,
 		build = 'cargo build --release',
+		dependencies = { 'rafamadriz/friendly-snippets' },
 		---@type blink.cmp.Config
 		opts = {
 			---@diagnostic disable: missing-fields
@@ -19,20 +20,6 @@ return {
 						return vim.bo.filetype ~= 'TelescopePrompt'
 					end,
 				},
-			},
-			sources = {
-				cmdline = function()
-					local type = vim.fn.getcmdtype()
-					-- Searching forward or backwards
-					if type == '/' or type == '?' then
-						return { 'buffer' }
-					end
-					-- Command
-					if type == ':' then
-						return { 'cmdline' }
-					end
-					return {}
-				end,
 			},
 			---@diagnostic enable: missing-fields
 			keymap = {
