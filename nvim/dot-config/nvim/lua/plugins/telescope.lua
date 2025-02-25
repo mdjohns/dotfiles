@@ -41,6 +41,11 @@ return {
 			'<cmd>Telescope lsp_references show_line=false<cr>',
 			desc = 'Find LSP references',
 		},
+		{
+			'<leader>fw',
+			'<cmd>Telescope grep_string<cr>',
+			desc = 'Find word under cursor',
+		},
 	},
 	config = function()
 		local telescope = require 'telescope'
