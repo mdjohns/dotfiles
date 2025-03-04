@@ -7,7 +7,16 @@ return {
 		dependencies = { 'rafamadriz/friendly-snippets' },
 		---@type blink.cmp.Config
 		opts = {
-			---@diagnostic disable: missing-fields
+			cmdline = {
+				completion = {
+					menu = {
+						auto_show = true,
+					},
+				},
+				keymap = {
+					preset = 'inherit',
+				},
+			},
 			completion = {
 				documentation = {
 					window = {
@@ -21,7 +30,6 @@ return {
 					end,
 				},
 			},
-			---@diagnostic enable: missing-fields
 			keymap = {
 				['<C-y>'] = { 'accept' },
 				['<C-n>'] = { 'select_next' },
