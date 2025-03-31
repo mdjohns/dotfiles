@@ -3,7 +3,15 @@ return {
 	dependencies = {
 		{ 'echasnovski/mini.icons', opts = {} },
 	},
-	config = true,
+	config = function()
+		require('oil').setup {
+			keymaps = {
+				['<leader>y'] = {
+					'actions.yank_entry',
+				},
+			},
+		}
+	end,
 	keys = {
 		{
 			'-',
