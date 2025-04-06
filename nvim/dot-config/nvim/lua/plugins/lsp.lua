@@ -104,8 +104,6 @@ return {
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(_)
 					vim.opt_local.omnifunc = 'v:lua.vim.lsp.omnifunc'
-					vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', { buffer = 0 })
-					vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { buffer = 0 })
 					vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
 					vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { buffer = 0 })
 					vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = 0 })
