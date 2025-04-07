@@ -7,28 +7,41 @@ return {
 			{
 				'<leader><leader>',
 				function()
-					local function toggle_git_files()
-						require('fzf-lua').git_files {
+					local fzf = require 'fzf-lua'
+					local git_files = fzf.git_files
+					local files = fzf.files
+
+					function FILES(query)
+						files {
+							query = query or '',
 							actions = {
 								['ctrl-g'] = {
-									fn = function()
-										require('fzf-lua').files {
-											actions = {
-												['ctrl-g'] = {
-													fn = toggle_git_files,
-													exec_silent = true,
-												},
-											},
-										}
+									fn = function(_, opts)
+										GIT_FILES(opts.last_query)
 									end,
 									exec_silent = true,
 								},
 							},
 						}
 					end
-					toggle_git_files()
+
+					function GIT_FILES(query)
+						git_files {
+							['query'] = query or '',
+							actions = {
+								['ctrl-g'] = {
+									fn = function(_, opts)
+										FILES(opts.last_query)
+									end,
+									exec_silent = true,
+								},
+							},
+						}
+					end
+
+					GIT_FILES()
 				end,
-				desc = 'Find git files',
+				desc = 'Toggle between git files and all files',
 			},
 			{
 				'<leader>fh',
