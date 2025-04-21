@@ -4,7 +4,26 @@ return {
 		'saghen/blink.cmp',
 		lazy = false,
 		build = 'cargo build --release',
-		dependencies = { 'rafamadriz/friendly-snippets' },
+		dependencies = {
+			{ 'rafamadriz/friendly-snippets' },
+			{ 'giuxtaposition/blink-cmp-copilot' },
+			{
+				'zbirenbaum/copilot.lua',
+				cmd = 'Copilot',
+				event = 'InsertEnter',
+				opts = {
+					panel = {
+						enabled = false,
+					},
+					suggestion = {
+						enabled = false,
+					},
+				},
+				config = function(opts)
+					require('copilot').setup(opts)
+				end,
+			},
+		},
 		---@type blink.cmp.Config
 		opts = {
 			cmdline = {
@@ -36,6 +55,17 @@ return {
 				['<C-p>'] = { 'select_prev' },
 				['<C-j>'] = { 'snippet_forward' },
 				['<C-k>'] = { 'snippet_backward' },
+			},
+			sources = {
+				default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+				providers = {
+					copilot = {
+						name = 'copilot',
+						module = 'blink-cmp-copilot',
+						score_offset = 100,
+						async = true,
+					},
+				},
 			},
 		},
 		config = true,
