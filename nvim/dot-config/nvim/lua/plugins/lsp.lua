@@ -102,7 +102,14 @@ return {
 			end
 
 			vim.api.nvim_create_autocmd('LspAttach', {
-				callback = function(_)
+				callback = function(args)
+					local client = vim.lsp.get_client_by_id(args.data.client_id)
+					if client and client:supports_method 'textDocument/documentColor' then
+						vim.lsp.document_color.enable(true, args.buf, {
+							style = 'virtual',
+						})
+					end
+
 					vim.opt_local.omnifunc = 'v:lua.vim.lsp.omnifunc'
 					vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
 					vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { buffer = 0 })
