@@ -7,22 +7,7 @@ return {
 		dependencies = {
 			{ 'rafamadriz/friendly-snippets' },
 			{ 'giuxtaposition/blink-cmp-copilot' },
-			{
-				'zbirenbaum/copilot.lua',
-				cmd = 'Copilot',
-				event = 'InsertEnter',
-				opts = {
-					panel = {
-						enabled = false,
-					},
-					suggestion = {
-						enabled = false,
-					},
-				},
-				config = function(opts)
-					require('copilot').setup(opts)
-				end,
-			},
+			{ 'zbirenbaum/copilot.lua' },
 		},
 		---@type blink.cmp.Config
 		opts = {
