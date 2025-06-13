@@ -116,16 +116,17 @@ return {
 					lualine_x = {
 						'diagnostics',
 						attached_clients,
+						-- { require 'mcphub.extensions.lualine' },
 						'filetype',
 					},
 				},
 			}
 		end,
 	},
-	event = { 'VimEnter', 'BufReadPost', 'BufNewFile' },
 	{
 		'mvllow/modes.nvim',
 		config = true,
+		event = { 'VimEnter', 'BufReadPost', 'BufNewFile' },
 	},
 	{
 		'j-hui/fidget.nvim',

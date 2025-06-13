@@ -33,12 +33,10 @@ return {
 		},
 		dependencies = {
 			{ 'zbirenbaum/copilot.lua' },
-			{ 'nvim-lua/plenary.nvim', branch = 'master' },
+			{ 'nvim-lua/plenary.nvim' },
 		},
-		---@type CopilotChat.config
-		opts = {},
-		config = function(opts)
-			require('CopilotChat').setup(opts)
+		config = function()
+			require('CopilotChat').setup {}
 		end,
 	},
 }

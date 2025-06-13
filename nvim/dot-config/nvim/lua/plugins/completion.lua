@@ -45,7 +45,7 @@ return {
 				['<C-k>'] = { 'snippet_backward' },
 			},
 			sources = {
-				default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+				default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'codecompanion' },
 				providers = {
 					copilot = {
 						name = 'copilot',
