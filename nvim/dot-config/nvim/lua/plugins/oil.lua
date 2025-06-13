@@ -5,6 +5,12 @@ return {
 	},
 	config = function()
 		require('oil').setup {
+			git = {
+				mv = function(_path)
+					-- automatically `git mv` files
+					return true
+				end,
+			},
 			keymaps = {
 				['<leader>y'] = {
 					'actions.yank_entry',
