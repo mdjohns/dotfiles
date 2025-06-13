@@ -63,7 +63,7 @@ return {
 				javascriptreact = js_formatters,
 				json = { 'prettierd' },
 				html = { 'prettierd' },
-				markdown = { 'injected' },
+				markdown = { 'prettierd', 'injected' },
 				ocaml = { 'ocamlformat' },
 				sh = { 'shfmt' },
 				svelte = js_formatters,
