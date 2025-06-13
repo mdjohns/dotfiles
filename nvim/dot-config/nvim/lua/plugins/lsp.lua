@@ -58,6 +58,11 @@ return {
 				taplo = true,
 				rust_analyzer = true,
 				vtsls = {
+					settings = {
+						vtsls = {
+							autoUseWorkspaceTsdk = true,
+						},
+					},
 					on_attach = function(client, bufnr)
 						require('twoslash-queries').attach(client, bufnr)
 					end,
