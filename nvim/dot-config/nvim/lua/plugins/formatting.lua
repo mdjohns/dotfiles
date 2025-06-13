@@ -62,6 +62,7 @@ return {
 				javascript = js_formatters,
 				javascriptreact = js_formatters,
 				json = { 'prettierd' },
+				jsonc = { 'prettierd' },
 				html = { 'prettierd' },
 				markdown = { 'prettierd', 'injected' },
 				ocaml = { 'ocamlformat' },
