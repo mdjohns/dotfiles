@@ -1,7 +1,8 @@
+local M = {}
+
 -- credit: https://gist.github.com/Lamarcke/36e086dd3bb2cebc593d505e2f838e07
--- Returns a string with a list of attached LSP clients, including
--- formatters and linters from null-ls, nvim-lint and formatter.nvim
-local function get_attached_clients()
+-- Returns a string with a list of attached LSP clients
+M.get_attached_clients = function()
 	local buf_clients = vim.lsp.get_clients { bufnr = 0 }
 	if #buf_clients == 0 then
 		return 'LSP Inactive'
@@ -66,76 +67,4 @@ local function get_attached_clients()
 	return language_servers
 end
 
----@type LazyPluginSpec[]
-return {
-	{
-		'rose-pine/neovim',
-		name = 'rose-pine',
-		priority = 1000,
-		config = function()
-			require('rose-pine').setup {
-				highlight_groups = {
-					FzfLuaBorder = { fg = 'highlight_high', bg = 'none' },
-					FzfLuaNormal = { bg = 'none' },
-					FzfLuaFzfPrompt = { bg = 'base' },
-					FzfLuaSearch = { fg = 'subtle', bg = 'none' },
-					FzfLuaFzfPointer = { fg = 'rose', bg = 'rose' },
-				},
-			}
-
-			vim.cmd.colorscheme 'rose-pine'
-		end,
-	},
-	{
-		'nvim-lualine/lualine.nvim',
-		event = { 'VimEnter', 'BufReadPost', 'BufNewFile' },
-		dependencies = {
-			'nvim-tree/nvim-web-devicons',
-		},
-		config = function()
-			local lualine = require 'lualine'
-
-			local attached_clients = {
-				get_attached_clients,
-				color = {
-					gui = 'bold',
-				},
-			}
-
-			lualine.setup {
-				theme = 'rose-pine',
-				sections = {
-					lualine_b = { 'branch', 'diff' },
-					lualine_c = {
-						{
-							'filename',
-							path = 1,
-							shorting_target = 40,
-						},
-					},
-					lualine_x = {
-						'diagnostics',
-						attached_clients,
-						-- { require 'mcphub.extensions.lualine' },
-						'filetype',
-					},
-				},
-			}
-		end,
-	},
-	{
-		'mvllow/modes.nvim',
-		config = true,
-		event = { 'VimEnter', 'BufReadPost', 'BufNewFile' },
-	},
-	{
-		'j-hui/fidget.nvim',
-		opts = {
-			notification = {
-				override_vim_notify = true,
-			},
-		},
-		dependencies = { 'neovim/nvim-lspconfig' },
-		event = { 'VimEnter', 'BufReadPost', 'BufNewFile' },
-	},
-}
+return M
