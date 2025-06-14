@@ -8,6 +8,7 @@ return {
 		{ 'rafamadriz/friendly-snippets' },
 		{ 'giuxtaposition/blink-cmp-copilot' },
 		{ 'zbirenbaum/copilot.lua' },
+		{ 'folke/lazydev.nvim' },
 	},
 	---@type blink.cmp.Config
 	opts = {
@@ -45,13 +46,17 @@ return {
 			['<C-k>'] = { 'snippet_backward' },
 		},
 		sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'codecompanion' },
+			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'codecompanion', 'lazydev' },
 			providers = {
 				copilot = {
 					name = 'copilot',
 					module = 'blink-cmp-copilot',
 					score_offset = 100,
 					async = true,
+				},
+				lazydev = {
+					module = 'lazydev.integrations.blink',
+					score_offset = 100,
 				},
 			},
 		},

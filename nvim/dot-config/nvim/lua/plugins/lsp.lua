@@ -3,11 +3,11 @@ return {
 	{
 		'neovim/nvim-lspconfig',
 		dependencies = {
-			{ 'mason-org/mason.nvim' },
+			{ 'mason-org/mason.nvim', opts = {} },
 			{ 'mason-org/mason-lspconfig.nvim' },
 			{ 'WhoIsSethDaniel/mason-tool-installer.nvim' },
-			{ 'folke/neodev.nvim', ft = 'lua' },
-			{ 'b0o/SchemaStore.nvim' },
+			{ 'folke/lazydev.nvim' },
+			{ 'b0o/SchemaStore.nvim', ft = { 'json', 'yaml' } },
 			{ 'Saghen/blink.cmp' },
 			{
 				'marilari88/twoslash-queries.nvim',
@@ -24,7 +24,6 @@ return {
 			if pcall(require, 'blink-cmp') then
 				capabilities = require('blink-cmp').get_lsp_capabilities()
 			end
-			require('neodev').setup {}
 
 			vim.diagnostic.config { virtual_text = true }
 
