@@ -3,8 +3,8 @@ return {
 	{
 		'neovim/nvim-lspconfig',
 		dependencies = {
-			{ 'williamboman/mason.nvim' },
-			{ 'williamboman/mason-lspconfig.nvim' },
+			{ 'mason-org/mason.nvim' },
+			{ 'mason-org/mason-lspconfig.nvim' },
 			{ 'WhoIsSethDaniel/mason-tool-installer.nvim' },
 			{ 'folke/neodev.nvim', ft = 'lua' },
 			{ 'b0o/SchemaStore.nvim' },
