@@ -18,14 +18,11 @@ return {
 			},
 		},
 		config = function()
-			require('mason').setup()
 			local lspconfig = require 'lspconfig'
 			local capabilities = nil
 			if pcall(require, 'blink-cmp') then
 				capabilities = require('blink-cmp').get_lsp_capabilities()
 			end
-
-			vim.diagnostic.config { virtual_text = true }
 
 			---@type table<string, boolean | table>
 			local servers = {
