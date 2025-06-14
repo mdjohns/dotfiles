@@ -1,15 +1,18 @@
+local o = vim.o
 local opt = vim.opt
 
-opt.number = true
-opt.relativenumber = true
+o.confirm = true
 
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.shiftround = true
-opt.expandtab = true
+o.number = true
+o.relativenumber = true
 
-opt.ignorecase = true
-opt.smartcase = true
+o.tabstop = 2
+o.shiftwidth = 2
+o.shiftround = true
+o.expandtab = true
+
+o.ignorecase = true
+o.smartcase = true
 
 opt.completeopt = { 'menu', 'menuone', 'noselect', 'popup' }
 opt.shortmess:append 'c'
