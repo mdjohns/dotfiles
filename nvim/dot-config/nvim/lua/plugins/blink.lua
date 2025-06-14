@@ -2,7 +2,7 @@
 return {
 
 	'saghen/blink.cmp',
-	lazy = false,
+	event = 'VimEnter',
 	build = 'cargo build --release',
 	dependencies = {
 		{ 'rafamadriz/friendly-snippets' },
@@ -10,7 +10,6 @@ return {
 		{ 'zbirenbaum/copilot.lua' },
 		{ 'folke/lazydev.nvim' },
 	},
-	---@type blink.cmp.Config
 	opts = {
 		cmdline = {
 			completion = {
@@ -46,7 +45,7 @@ return {
 			['<C-k>'] = { 'snippet_backward' },
 		},
 		sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'codecompanion', 'lazydev' },
+			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'lazydev' },
 			providers = {
 				copilot = {
 					name = 'copilot',
