@@ -1,6 +1,5 @@
----@type LazyPluginSpec[]
+---@type LazyPluginSpec
 return {
-	{
 		'mistweaverco/kulala.nvim',
 		keys = {
 			{
@@ -30,5 +29,4 @@ return {
 			additional_curl_options = { '--insecure' },
 			global_keymaps = false,
 		},
-	},
 }
