@@ -1,4 +1,6 @@
 local js_linters = { 'eslint_d' }
+
+---@type LazyPluginSpec
 return {
 	'mfussenegger/nvim-lint',
 	config = function()
