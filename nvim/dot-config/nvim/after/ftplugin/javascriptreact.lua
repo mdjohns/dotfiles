@@ -1,2 +1,2 @@
-local javascript = require 'my.javascript'
+local javascript = require 'my.utils.javascript'
 javascript.apply_common_settings()
