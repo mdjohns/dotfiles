@@ -1,8 +1,7 @@
 ---@type LazyPluginSpec
 return {
-
 	'saghen/blink.cmp',
-	event = 'VimEnter',
+	lazy = false,
 	build = 'cargo build --release',
 	dependencies = {
 		{ 'rafamadriz/friendly-snippets' },
@@ -21,6 +20,9 @@ return {
 				preset = 'inherit',
 			},
 		},
+		fuzzy = {
+			implementation = 'lua',
+		},
 		completion = {
 			documentation = {
 				window = {
@@ -35,6 +37,12 @@ return {
 				auto_show = function(_)
 					return vim.bo.filetype ~= 'TelescopePrompt'
 				end,
+			},
+			list = {
+				selection = {
+					preselect = false,
+					auto_insert = true,
+				},
 			},
 		},
 		keymap = {
@@ -59,6 +67,9 @@ return {
 				},
 			},
 		},
+	},
+	signature = {
+		enabled = true,
 	},
 	config = true,
 }
