@@ -18,3 +18,5 @@ o.showmode = false
 
 opt.completeopt = { 'menu', 'menuone', 'noselect', 'popup' }
 opt.shortmess:append 'c'
+
+o.swapfile = false
