@@ -25,6 +25,9 @@ return {
 			},
 			highlight = { enable = true },
 			indent = { enable = true },
+			disable = function(_lang, bufnr)
+				return vim.api.nvim_buf_line_count(bufnr) > 50000
+			end,
 		}
 	end,
 }
