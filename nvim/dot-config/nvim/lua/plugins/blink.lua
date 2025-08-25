@@ -8,6 +8,7 @@ return {
 		{ 'giuxtaposition/blink-cmp-copilot' },
 		{ 'zbirenbaum/copilot.lua' },
 		{ 'folke/lazydev.nvim' },
+		{ 'moyiz/blink-emoji.nvim' },
 	},
 	opts = {
 		cmdline = {
@@ -53,7 +54,7 @@ return {
 			['<C-k>'] = { 'snippet_backward' },
 		},
 		sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'lazydev' },
+			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'lazydev', 'emoji' },
 			providers = {
 				copilot = {
 					name = 'copilot',
@@ -64,6 +65,10 @@ return {
 				lazydev = {
 					module = 'lazydev.integrations.blink',
 					score_offset = 100,
+				},
+				emoji = {
+					module = 'blink-emoji',
+					score_offset = 15,
 				},
 			},
 		},

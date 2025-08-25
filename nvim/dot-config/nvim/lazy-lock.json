@@ -4,6 +4,7 @@
   "arena.nvim": { "branch": "main", "commit": "9d0987c3672ebfb39eeed8f15eb47de815d308b9" },
   "beacon.nvim": { "branch": "master", "commit": "098ff96c33874339d5e61656f3050dbd587d6bd5" },
   "blink-cmp-copilot": { "branch": "main", "commit": "439cff78780c033aa23cf061d7315314b347e3c1" },
+  "blink-emoji.nvim": { "branch": "master", "commit": "f22ce8cac02a6ece05368220f1e38bd34fe376f9" },
   "blink.cmp": { "branch": "main", "commit": "ce26f9fbaa4560440dd981cad1d2e47ae82dd3a6" },
   "conform.nvim": { "branch": "master", "commit": "973f3cb73887d510321653044791d7937c7ec0fa" },
   "copilot.lua": { "branch": "master", "commit": "0f2fd3829dd27d682e46c244cf48d9715726f612" },
