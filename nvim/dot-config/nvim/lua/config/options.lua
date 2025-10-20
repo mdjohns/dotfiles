@@ -20,3 +20,5 @@ opt.completeopt = { 'menu', 'menuone', 'noselect', 'popup' }
 opt.shortmess:append 'c'
 
 o.swapfile = false
+
+o.winborder = 'rounded'
