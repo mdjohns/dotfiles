@@ -12,6 +12,7 @@ return {
 			ensure_installed = {
 				'astro',
 				'css',
+				'hcl',
 				'javascript',
 				'lua',
 				'make',
