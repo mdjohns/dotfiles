@@ -1,4 +1,4 @@
-local js_linters = { 'eslint_d' }
+local js_linters = { 'biome', 'eslint_d', 'oxlint' }
 
 ---@type LazyPluginSpec
 return {

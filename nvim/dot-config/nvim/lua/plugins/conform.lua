@@ -61,8 +61,8 @@ return {
 				lua = { 'stylua' },
 				javascript = js_formatters,
 				javascriptreact = js_formatters,
-				json = { 'prettierd' },
-				jsonc = { 'prettierd' },
+				json = { 'biome', 'prettierd' },
+				jsonc = { 'biome', 'prettierd' },
 				html = { 'prettierd' },
 				markdown = { 'prettierd', 'injected' },
 				ocaml = { 'ocamlformat' },
@@ -71,6 +71,7 @@ return {
 				typescript = js_formatters,
 				typescriptreact = js_formatters,
 				yaml = { 'prettierd' },
+				xml = { 'xmllint' },
 			},
 			format_on_save = function(bufnr)
 				-- Disable formatting on save with a global or buffer-local variable
