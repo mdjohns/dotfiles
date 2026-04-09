@@ -1,3 +1,19 @@
+local grep_opts = {
+	'rg',
+	'--vimgrep',
+	'--hidden',
+	'--follow',
+	'--glob',
+	'!**/*.git/*',
+	'--column',
+	'--line-number',
+	'--no-heading',
+	'--color=always',
+	'--smart-case',
+	'--max-columns=4096',
+	'-e',
+}
+
 ---@type LazyPluginSpec[]
 return {
 	{
@@ -50,8 +66,8 @@ return {
 			},
 			{
 				'<leader>fg',
-				'<cmd>FzfLua live_grep_glob<cr>',
-				desc = 'Live grep',
+				'<cmd>FzfLua grep<cr>',
+				desc = 'grep',
 			},
 			{
 				'<leader>fw',
@@ -68,6 +84,7 @@ return {
 			},
 		},
 		config = function()
+			local actions = require 'fzf-lua.actions'
 			require('fzf-lua').setup {
 				'fzf-native',
 				files = {
@@ -84,6 +101,12 @@ return {
 					},
 					references = {
 						jump1 = true,
+					},
+				},
+				grep = {
+					cmd = table.concat(grep_opts, ' '),
+					actions = {
+						['ctrl-s'] = actions.toggle_hidden,
 					},
 				},
 			}

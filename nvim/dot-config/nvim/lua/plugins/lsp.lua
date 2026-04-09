@@ -27,6 +27,10 @@ return {
 		local servers = {
 			astro = true,
 			bashls = true,
+			-- ['copilot-language-server'] = true,
+			dockerls = true,
+			basedpyright = true,
+			expert = true,
 			graphql = true,
 			jsonls = {
 				settings = {
@@ -56,13 +60,22 @@ return {
 				settings = {
 					vtsls = {
 						autoUseWorkspaceTsdk = true,
+						['typescript.tsdk'] = 'node_modules/typescript/lib',
 					},
 				},
 				on_attach = function(client, bufnr)
 					require('twoslash-queries').attach(client, bufnr)
 				end,
 			},
-			yamlls = true,
+			yamlls = {
+				settings = {
+					yaml = {
+						schemas = vim.tbl_deep_extend('force', require('schemastore').yaml.schemas(), {
+							['https://raw.githubusercontent.com/harness/harness-schema/main/v0/pipeline.json'] = '/.harness/*.yaml',
+						}),
+					},
+				},
+			},
 		}
 
 		local servers_to_install = vim.tbl_filter(function(key)
@@ -98,7 +111,9 @@ return {
 				capabilities = capabilities,
 			}, config)
 
-			lspconfig[name].setup(config)
+			vim.lsp.config(name, config)
+			vim.lsp.enable(name)
+			-- lspconfig[name].setup(config)
 		end
 
 		vim.api.nvim_create_autocmd('LspAttach', {
@@ -115,6 +130,7 @@ return {
 				vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { buffer = 0 })
 				vim.keymap.set('n', '<leader>ca', require('fzf-lua').lsp_code_actions, { buffer = 0 })
 				vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float, { buffer = 0 })
+				vim.keymap.set('n', '<leader>bf', vim.lsp.buf.format, { buffer = 0 })
 			end,
 		})
 	end,

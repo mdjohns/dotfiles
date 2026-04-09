@@ -66,6 +66,7 @@ return {
 				html = { 'prettierd' },
 				markdown = { 'prettierd', 'injected' },
 				ocaml = { 'ocamlformat' },
+				python = { 'ruff' },
 				sh = { 'shfmt' },
 				svelte = js_formatters,
 				typescript = js_formatters,

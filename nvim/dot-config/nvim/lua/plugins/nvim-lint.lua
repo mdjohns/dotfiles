@@ -1,4 +1,4 @@
-local js_linters = { 'biome', 'eslint_d', 'oxlint' }
+local js_linters = { 'eslint_d' }
 
 ---@type LazyPluginSpec
 return {
@@ -8,8 +8,11 @@ return {
 			astro = js_linters,
 			bash = { 'shellcheck' },
 			graphql = js_linters,
+			python = { 'ruff' },
 			sh = { 'shellcheck' },
 			svelte = js_linters,
+			javascript = js_linters,
+			typescript = js_linters,
 		}
 
 		vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost' }, {
