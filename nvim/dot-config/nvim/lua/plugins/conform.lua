@@ -1,4 +1,4 @@
-local js_formatters = { 'eslint_d', 'prettierd' }
+local js_formatters = { 'eslint_d', 'oxfmt', 'prettierd' }
 
 ---@type LazyPluginSpec
 return {
@@ -56,6 +56,9 @@ return {
 							return eslint_cwd(self, ctx)
 						end
 					end,
+				},
+				oxfmt = {
+					require_cwd = true,
 				},
 				prettierd = {
 					cwd = function(self, ctx)
