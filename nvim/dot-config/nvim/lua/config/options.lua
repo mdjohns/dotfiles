@@ -19,6 +19,9 @@ o.showmode = false
 opt.completeopt = { 'menu', 'menuone', 'noselect', 'popup' }
 opt.shortmess:append 'c'
 
+opt.cmdheight = 0
+opt.laststatus = 3
+
 o.swapfile = false
 
 o.winborder = 'rounded'

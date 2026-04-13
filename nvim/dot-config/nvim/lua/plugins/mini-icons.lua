@@ -1,4 +1,5 @@
+---@type LazyPluginSpec
 return {
-	'echasnovski/mini.icons',
-	opts = true,
+	'nvim-mini/mini.icons',
+	opts = {},
 }

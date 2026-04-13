@@ -1,15 +1,13 @@
-local js_linters = { 'biome', 'eslint_d', 'oxlint' }
+local js_linters = { 'eslint_d', 'oxlint' }
 
 ---@type LazyPluginSpec
 return {
 	'mfussenegger/nvim-lint',
 	config = function()
 		require('lint').linters_by_ft = {
-			astro = js_linters,
 			bash = { 'shellcheck' },
-			graphql = js_linters,
-			sh = { 'shellcheck' },
-			svelte = js_linters,
+			javascript = js_linters,
+			typescript = js_linters,
 		}
 
 		vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost' }, {

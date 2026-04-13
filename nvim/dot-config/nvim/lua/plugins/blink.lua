@@ -11,48 +11,6 @@ return {
 		{ 'moyiz/blink-emoji.nvim' },
 	},
 	opts = {
-		cmdline = {
-			completion = {
-				menu = {
-					auto_show = true,
-				},
-			},
-			keymap = {
-				preset = 'inherit',
-			},
-		},
-		fuzzy = {
-			implementation = 'lua',
-		},
-		completion = {
-			documentation = {
-				window = {
-					border = 'rounded',
-				},
-			},
-			ghost_text = {
-				enabled = true,
-			},
-			menu = {
-				border = 'rounded',
-				auto_show = function(_)
-					return vim.bo.filetype ~= 'TelescopePrompt'
-				end,
-			},
-			list = {
-				selection = {
-					preselect = false,
-					auto_insert = true,
-				},
-			},
-		},
-		keymap = {
-			['<C-y>'] = { 'accept' },
-			['<C-n>'] = { 'select_next' },
-			['<C-p>'] = { 'select_prev' },
-			['<C-j>'] = { 'snippet_forward' },
-			['<C-k>'] = { 'snippet_backward' },
-		},
 		sources = {
 			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'lazydev', 'emoji' },
 			providers = {
@@ -72,9 +30,8 @@ return {
 				},
 			},
 		},
+		signature = {
+			enabled = true,
+		},
 	},
-	signature = {
-		enabled = true,
-	},
-	config = true,
 }

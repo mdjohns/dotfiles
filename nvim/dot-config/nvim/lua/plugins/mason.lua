@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-	'j-hui/fidget.nvim',
+	'mason-org/mason.nvim',
 	opts = {},
 }

@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-	'DanilaMihailov/beacon.nvim',
+	'danilamihailov/beacon.nvim',
 	event = 'BufRead',
 	opts = {
 		width = 20,

@@ -1,17 +1,15 @@
---- @type LazyPluginSpec
+---@type LazyPluginSpec
 return {
 	'NeogitOrg/neogit',
-	keys = {
-		{
-			'<leader>ng',
-			'<cmd>Neogit<cr>',
-			desc = 'Open Neogit',
-		},
-	},
+	lazy = true,
 	dependencies = {
 		'nvim-lua/plenary.nvim',
-		'sindrets/diffview.nvim',
-		'ibhagwan/fzf-lua',
+		'esmuellert/codediff.nvim',
+		'folke/snacks.nvim',
+	},
+	cmd = 'Neogit',
+	keys = {
+		{ '<leader>ng', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
 	},
 	opts = {
 		auto_show_console = false,

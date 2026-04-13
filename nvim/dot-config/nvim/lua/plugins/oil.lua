@@ -1,28 +1,19 @@
+---@type LazyPluginSpec
 return {
 	'stevearc/oil.nvim',
-	dependencies = {
-		{ 'echasnovski/mini.icons' },
-	},
+	---@module 'oil'
+	---@type oil.SetupOpts
+	opts = {},
+	dependencies = { { 'nvim-mini/mini.icons', opts = {} } },
+	lazy = false,
 	config = function()
 		require('oil').setup {
 			git = {
-				mv = function(_path)
-					-- automatically `git mv` files
+				mv = function()
 					return true
 				end,
 			},
-			keymaps = {
-				['<leader>y'] = {
-					'actions.yank_entry',
-				},
-			},
 		}
+		vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 	end,
-	keys = {
-		{
-			'-',
-			'<cmd>Oil<cr>',
-			desc = 'Open parent directory',
-		},
-	},
 }
