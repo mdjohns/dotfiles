@@ -54,6 +54,7 @@ return {
 				},
 			},
 			svelte = true,
+			terraform = true,
 			taplo = true,
 			rust_analyzer = true,
 			vtsls = {
