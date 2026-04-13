@@ -1,0 +1,6 @@
+require 'config.keymaps'
+require 'config.options'
+require 'config.lazy'
+require 'config.lsp'
+require 'config.autocommands'
+require 'config.filetype'
