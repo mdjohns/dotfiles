@@ -6,7 +6,7 @@ return {
 		{
 			'<leader><leader>',
 			function()
-				require('snacks').picker.smart()
+				Snacks.picker.smart()
 			end,
 			desc = 'Smart Find Files',
 		},
@@ -14,9 +14,9 @@ return {
 			'<leader>ff',
 			function()
 				if vim.fn.isdirectory '.git' == 1 then
-					require('snacks').picker.git_files()
+					Snacks.picker.git_files()
 				else
-					require('snacks').picker.files()
+					Snacks.picker.files()
 				end
 			end,
 			desc = 'Find Files',
@@ -24,16 +24,80 @@ return {
 		{
 			'<leader>fg',
 			function()
-				require('snacks').picker.grep()
+				Snacks.picker.grep()
 			end,
 			desc = 'Grep',
 		},
 		{
 			'<leader>fh',
 			function()
-				require('snacks').picker.help()
+				Snacks.picker.help()
 			end,
 			desc = 'Find Help docs',
+		},
+		{
+			'gd',
+			function()
+				Snacks.picker.lsp_definitions()
+			end,
+			desc = 'Goto Definition',
+		},
+		{
+			'gD',
+			function()
+				Snacks.picker.lsp_declarations()
+			end,
+			desc = 'Goto Declaration',
+		},
+		{
+			'gr',
+			function()
+				Snacks.picker.lsp_references()
+			end,
+			nowait = true,
+			desc = 'References',
+		},
+		{
+			'gI',
+			function()
+				Snacks.picker.lsp_implementations()
+			end,
+			desc = 'Goto Implementation',
+		},
+		{
+			'gy',
+			function()
+				Snacks.picker.lsp_type_definitions()
+			end,
+			desc = 'Goto T[y]pe Definition',
+		},
+		{
+			'gai',
+			function()
+				Snacks.picker.lsp_incoming_calls()
+			end,
+			desc = 'C[a]lls Incoming',
+		},
+		{
+			'gao',
+			function()
+				Snacks.picker.lsp_outgoing_calls()
+			end,
+			desc = 'C[a]lls Outgoing',
+		},
+		{
+			'<leader>ss',
+			function()
+				Snacks.picker.lsp_symbols()
+			end,
+			desc = 'LSP Symbols',
+		},
+		{
+			'<leader>sS',
+			function()
+				Snacks.picker.lsp_workspace_symbols()
+			end,
+			desc = 'LSP Workspace Symbols',
 		},
 	},
 }
