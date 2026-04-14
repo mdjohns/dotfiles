@@ -197,6 +197,49 @@ return {
 				for _, client in ipairs(vim.lsp.get_clients { bufnr = 0 }) do
 					table.insert(names, client.name)
 				end
+				if #names == 0 then
+					return ''
+				end
+				return '  ' .. table.concat(names, ', ') .. ' '
+			end,
+			hl = { fg = 'muted' },
+		}
+
+		local Tools = {
+			provider = function()
+				local seen = {}
+				local names = {}
+
+				local ok_conform, conform = pcall(require, 'conform')
+				if ok_conform then
+					for _, f in ipairs(conform.list_formatters_to_run(0)) do
+						if not seen[f.name] then
+							seen[f.name] = true
+							table.insert(names, f.name)
+						end
+					end
+				end
+
+				local ok_lint, lint = pcall(require, 'lint')
+				if ok_lint then
+					for _, name in ipairs(lint._resolve_linter_by_ft(vim.bo.filetype)) do
+						if not seen[name] then
+							local linter = lint.linters[name]
+							if type(linter) == 'function' then
+								linter = linter()
+							end
+							local cmd = linter and linter.cmd
+							if cmd and vim.fn.executable(cmd) == 1 then
+								seen[name] = true
+								table.insert(names, name)
+							end
+						end
+					end
+				end
+
+				if #names == 0 then
+					return ''
+				end
 				return ' ' .. table.concat(names, ', ') .. ' '
 			end,
 			hl = { fg = 'muted' },
@@ -236,6 +279,7 @@ return {
 			Align,
 			Diagnostics,
 			LSPActive,
+			Tools,
 			FileType,
 			Space,
 			ScrollBar,
