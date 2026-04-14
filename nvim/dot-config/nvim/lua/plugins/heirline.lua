@@ -229,7 +229,10 @@ return {
 								linter = linter()
 							end
 							local cmd = linter and linter.cmd
-							if cmd and vim.fn.executable(cmd) == 1 then
+							if type(cmd) == 'function' then
+								cmd = cmd()
+							end
+							if type(cmd) == 'string' and vim.fn.executable(cmd) == 1 then
 								seen[name] = true
 								table.insert(names, name)
 							end
