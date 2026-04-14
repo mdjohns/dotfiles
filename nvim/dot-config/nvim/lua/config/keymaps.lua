@@ -9,3 +9,5 @@ set('n', '<M-,>', '<c-w>5<', { desc = 'Decrease width of current split' })
 set('n', '<M-.>', '<c-w>5>', { desc = 'Increase width of current split' })
 set('n', '<M-t>', '<c-w>+', { desc = 'Make current split [t]aller' })
 set('n', '<M-s>', '<c-w>-', { desc = 'Make current split [s]horter' })
+
+set('n', '<leader>/', '<cmd>nohlsearch<cr>', { desc = 'Clear search highlights' })
