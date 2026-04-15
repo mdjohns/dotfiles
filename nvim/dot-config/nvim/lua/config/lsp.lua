@@ -2,6 +2,7 @@ vim.lsp.enable {
 	'copilot',
 	'lua_ls',
 	'jsonls',
+	'terraformls',
 	'vtsls',
 }
 
