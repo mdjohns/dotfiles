@@ -56,8 +56,18 @@ return {
 							return eslint_cwd(self, ctx)
 						end
 					end,
+					require_cwd = true,
 				},
 				oxfmt = {
+					cwd = function(self, ctx)
+						local oxfmt_config = require('conform.util').root_file {
+							'.oxfmtrc.json',
+							'.oxfmtrc.jsonc',
+							'oxfmt.config.ts',
+						}
+
+						return oxfmt_config(self, ctx)
+					end,
 					require_cwd = true,
 				},
 				prettierd = {
@@ -69,6 +79,7 @@ return {
 
 						return prettier_cwd(self, ctx)
 					end,
+					require_cwd = true,
 				},
 			},
 		}
