@@ -207,38 +207,36 @@ return {
 
 		local Tools = {
 			provider = function()
+				local list = require('util.list')
 				local seen = {}
 				local names = {}
 
 				local ok_conform, conform = pcall(require, 'conform')
 				if ok_conform then
-					for _, f in ipairs(conform.list_formatters_to_run(0)) do
-						if not seen[f.name] then
-							seen[f.name] = true
-							table.insert(names, f.name)
-						end
-					end
+					local formatter_names = vim.tbl_map(function(f) return f.name end, conform.list_formatters_to_run(0))
+					list.extend_unique(names, formatter_names, seen)
 				end
 
 				local ok_lint, lint = pcall(require, 'lint')
 				if ok_lint then
+					local resolved = {}
 					for _, name in ipairs(lint._resolve_linter_by_ft(vim.bo.filetype)) do
-						if not seen[name] then
-							local linter = lint.linters[name]
-							if type(linter) == 'function' then
-								linter = linter()
-							end
-							local cmd = linter and linter.cmd
-							if type(cmd) == 'function' then
-								cmd = cmd()
-							end
-							if type(cmd) == 'string' and vim.fn.executable(cmd) == 1 then
-								seen[name] = true
-								table.insert(names, name)
-							end
+						local linter = lint.linters[name]
+						if type(linter) == 'function' then
+							linter = linter()
+						end
+						local cmd = linter and linter.cmd
+						if type(cmd) == 'function' then
+							cmd = cmd()
+						end
+						if type(cmd) == 'string' and vim.fn.executable(cmd) == 1 then
+							table.insert(resolved, name)
 						end
 					end
+					list.extend_unique(names, resolved, seen)
 				end
+
+				list.extend_unique(names, vim.b.ftplugin_linters or {}, seen)
 
 				if #names == 0 then
 					return ''

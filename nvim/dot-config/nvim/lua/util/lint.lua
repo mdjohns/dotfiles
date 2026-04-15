@@ -14,7 +14,7 @@ local configs = {
 	},
 	oxlint = {
 		'.oxlintrc.json',
-		'oxlint.json',
+		'oxlint.config.ts',
 	},
 	biome = {
 		'biome.json',
@@ -40,6 +40,11 @@ function M.enable_if_configured(name)
 	end
 
 	local bufnr = vim.api.nvim_get_current_buf()
+
+	local linters = vim.b[bufnr].ftplugin_linters or {}
+	table.insert(linters, name)
+	vim.b[bufnr].ftplugin_linters = linters
+
 	vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
 		buffer = bufnr,
 		group = vim.api.nvim_create_augroup(name .. '-' .. bufnr, { clear = true }),
