@@ -35,6 +35,21 @@ return {
 			end,
 			desc = 'Find Help docs',
 		},
+
+		{
+			'<leader>sd',
+			function()
+				Snacks.picker.diagnostics()
+			end,
+			desc = 'Diagnostics',
+		},
+		{
+			'<leader>sD',
+			function()
+				Snacks.picker.diagnostics_buffer()
+			end,
+			desc = 'Buffer Diagnostics',
+		},
 		{
 			'gd',
 			function()
