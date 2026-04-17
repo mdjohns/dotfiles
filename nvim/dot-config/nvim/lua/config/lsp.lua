@@ -17,3 +17,5 @@ vim.diagnostic.config {
 	virtual_lines = true,
 	virtual_text = true,
 }
+
+vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float, { desc = 'Open diagnostics float' })
