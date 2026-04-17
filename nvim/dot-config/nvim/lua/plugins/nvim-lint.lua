@@ -4,6 +4,7 @@ return {
 	config = function()
 		require('lint').linters_by_ft = {
 			bash = { 'shellcheck' },
+			python = { 'ruff' },
 		}
 
 		vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost' }, {

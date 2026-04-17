@@ -41,6 +41,7 @@ return {
 				jsonc = { 'prettierd' },
 				lua = { 'stylua' },
 				markdown = { 'prettierd', 'injected' },
+				python = { 'ruff' },
 				typescript = js_formatters,
 				typescriptreact = js_formatters,
 			},
