@@ -11,6 +11,13 @@ return {
 		{ 'moyiz/blink-emoji.nvim' },
 	},
 	opts = {
+		completion = {
+			menu = {
+				draw = {
+					treesitter = { 'lsp' },
+				},
+			},
+		},
 		sources = {
 			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'lazydev', 'emoji' },
 			providers = {
