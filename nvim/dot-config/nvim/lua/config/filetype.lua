@@ -3,6 +3,7 @@ vim.filetype.add {
 		bun = 'typescript',
 		har = 'json',
 		['http'] = 'http',
+		tf = 'terraform',
 	},
 	pattern = {
 		-- dotfiles managed by `stow` will be prefixed with `dot-`
