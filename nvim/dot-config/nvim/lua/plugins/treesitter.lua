@@ -13,6 +13,7 @@ return {
 			'git_config',
 			'gitcommit',
 			'gitignore',
+			'go',
 			'html',
 			'http',
 			'javascript',
