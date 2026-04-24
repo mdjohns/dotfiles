@@ -22,6 +22,13 @@ return {
 		sources = {
 			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'lazydev', 'emoji' },
 			providers = {
+				path = {
+					opts = {
+						get_cwd = function(_context)
+							return vim.fn.getcwd()
+						end,
+					},
+				},
 				copilot = {
 					name = 'copilot',
 					module = 'blink-cmp-copilot',
