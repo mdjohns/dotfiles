@@ -17,6 +17,19 @@ return {
 				long_message_to_split = true, -- long messages will be sent to a split
 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
 			},
+			routes = {
+				{
+					filter = {
+						event = 'lsp',
+						kind = 'progress',
+						cond = function(message)
+							local client = vim.tbl_get(message.opts, 'progress', 'client')
+							return client == 'lua_ls'
+						end,
+					},
+					opts = { skip = true },
+				},
+			},
 		}
 	end,
 }
