@@ -1,10 +1,26 @@
---@type LazyPluginSpec
+---@type LazyPluginSpec
 return {
 	'folke/noice.nvim',
 	event = 'VeryLazy',
 	dependencies = {
 		'MunifTanjim/nui.nvim',
 		'rcarriga/nvim-notify',
+	},
+	keys = {
+		{
+			'<leader>nn',
+			function()
+				require('noice').cmd 'dismiss'
+			end,
+			desc = 'Dismiss Noice messages',
+		},
+		{
+			'<leader>nl',
+			function()
+				require('noice').cmd 'last'
+			end,
+			desc = 'Show last Noice message',
+		},
 	},
 	config = function()
 		require('noice').setup {
