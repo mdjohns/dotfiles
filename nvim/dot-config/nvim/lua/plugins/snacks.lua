@@ -1,12 +1,17 @@
 ---@type LazyPluginSpec
 return {
 	'folke/snacks.nvim',
-	opts = {},
+	---@type snacks.Config
+	opts = {
+		bigfile = {},
+		indent = {},
+		input = {},
+	},
 	keys = {
 		{
 			'<leader><leader>',
 			function()
-				Snacks.picker.smart()
+				require('snacks.picker').smart()
 			end,
 			desc = 'Smart Find Files',
 		},
@@ -14,9 +19,9 @@ return {
 			'<leader>ff',
 			function()
 				if vim.fn.isdirectory '.git' == 1 then
-					Snacks.picker.git_files()
+					require('snacks.picker').git_files()
 				else
-					Snacks.picker.files()
+					require('snacks.picker').files()
 				end
 			end,
 			desc = 'Find Files',
@@ -24,14 +29,14 @@ return {
 		{
 			'<leader>fg',
 			function()
-				Snacks.picker.grep()
+				require('snacks.picker').grep()
 			end,
 			desc = 'Grep',
 		},
 		{
 			'<leader>fh',
 			function()
-				Snacks.picker.help()
+				require('snacks.picker').help()
 			end,
 			desc = 'Find Help docs',
 		},
@@ -39,35 +44,35 @@ return {
 		{
 			'<leader>sd',
 			function()
-				Snacks.picker.diagnostics()
+				require('snacks.picker').diagnostics()
 			end,
 			desc = 'Diagnostics',
 		},
 		{
 			'<leader>sD',
 			function()
-				Snacks.picker.diagnostics_buffer()
+				require('snacks.picker').diagnostics_buffer()
 			end,
 			desc = 'Buffer Diagnostics',
 		},
 		{
 			'gd',
 			function()
-				Snacks.picker.lsp_definitions()
+				require('snacks.picker').lsp_definitions()
 			end,
 			desc = 'Goto Definition',
 		},
 		{
 			'gD',
 			function()
-				Snacks.picker.lsp_declarations()
+				require('snacks.picker').lsp_declarations()
 			end,
 			desc = 'Goto Declaration',
 		},
 		{
 			'gr',
 			function()
-				Snacks.picker.lsp_references()
+				require('snacks.picker').lsp_references()
 			end,
 			nowait = true,
 			desc = 'References',
@@ -75,42 +80,42 @@ return {
 		{
 			'gI',
 			function()
-				Snacks.picker.lsp_implementations()
+				require('snacks.picker').lsp_implementations()
 			end,
 			desc = 'Goto Implementation',
 		},
 		{
 			'gy',
 			function()
-				Snacks.picker.lsp_type_definitions()
+				require('snacks.picker').lsp_type_definitions()
 			end,
 			desc = 'Goto T[y]pe Definition',
 		},
 		{
 			'gai',
 			function()
-				Snacks.picker.lsp_incoming_calls()
+				require('snacks.picker').lsp_incoming_calls()
 			end,
 			desc = 'C[a]lls Incoming',
 		},
 		{
 			'gao',
 			function()
-				Snacks.picker.lsp_outgoing_calls()
+				require('snacks.picker').lsp_outgoing_calls()
 			end,
 			desc = 'C[a]lls Outgoing',
 		},
 		{
 			'<leader>ss',
 			function()
-				Snacks.picker.lsp_symbols()
+				require('snacks.picker').lsp_symbols()
 			end,
 			desc = 'LSP Symbols',
 		},
 		{
 			'<leader>sS',
 			function()
-				Snacks.picker.lsp_workspace_symbols()
+				require('snacks.picker').lsp_workspace_symbols()
 			end,
 			desc = 'LSP Workspace Symbols',
 		},
