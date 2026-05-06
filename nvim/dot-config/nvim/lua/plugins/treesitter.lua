@@ -55,6 +55,11 @@ return {
 				-- indentation
 				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 				-- folds
+				local is_float = vim.api.nvim_win_get_config(0).relative ~= ''
+				if is_float then
+					return
+				end
+
 				vim.o.foldenable = true
 				vim.o.foldlevelstart = 0
 				vim.o.foldtext = ''
