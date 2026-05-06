@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
 	'nvim-treesitter/nvim-treesitter',
 	lazy = false,
@@ -54,6 +55,9 @@ return {
 				-- indentation
 				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 				-- folds
+				vim.o.foldenable = true
+				vim.o.foldlevelstart = 0
+				vim.o.foldtext = ''
 				vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 				vim.wo[0][0].foldmethod = 'expr'
 			end,
