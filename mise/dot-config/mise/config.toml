@@ -1,4 +1,11 @@
 [tools]
-node = "22"
+bun = "latest"
+go = "latest"
+node = "26"
 pnpm = "latest"
+python = "latest"
 rust = "nightly"
+uv = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
