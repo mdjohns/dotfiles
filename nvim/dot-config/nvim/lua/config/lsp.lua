@@ -6,6 +6,7 @@ vim.lsp.enable {
 	'jsonls',
 	'terraformls',
 	'vtsls',
+	'yamlls',
 }
 
 vim.diagnostic.config {
