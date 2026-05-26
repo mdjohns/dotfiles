@@ -6,6 +6,12 @@ return {
 		bigfile = {},
 		indent = {},
 		input = {},
+		picker = {
+			sources = {
+				files = { hidden = true },
+				grep = { hidden = true },
+			},
+		},
 	},
 	keys = {
 		{
