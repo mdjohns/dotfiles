@@ -1,4 +1,4 @@
-local js_formatters = { 'eslint_d', 'oxfmt', 'prettierd' }
+local js_formatters = { 'biome', 'eslint_d', 'oxfmt', 'prettierd' }
 
 ---@type LazyPluginSpec
 return {
@@ -50,6 +50,9 @@ return {
 				lsp_format = 'fallback',
 			},
 			formatters = {
+				biome = {
+					require_cwd = true,
+				},
 				eslint_d = {
 					cwd = function(self, ctx)
 						-- only use eslint for formatting if prettier is not configured

@@ -16,7 +16,7 @@ local configs = {
 		'.oxlintrc.json',
 		'oxlint.config.ts',
 	},
-	biome = {
+	biomejs = {
 		'biome.json',
 		'biome.jsonc',
 	},
@@ -31,6 +31,11 @@ function M.enable_if_configured(name)
 	end
 
 	if not vim.fn.executable(name) then
+		return
+	end
+
+	local ok, lint = pcall(require, 'lint')
+	if not ok or not lint.linters[name] then
 		return
 	end
 
@@ -49,7 +54,11 @@ function M.enable_if_configured(name)
 		buffer = bufnr,
 		group = vim.api.nvim_create_augroup(name .. '-' .. bufnr, { clear = true }),
 		callback = function()
-			require('lint').try_lint(name)
+			local ok, lint = pcall(require, 'lint')
+			if not ok then
+				return
+			end
+			lint.try_lint(name)
 		end,
 	})
 end
