@@ -29,5 +29,6 @@
   "rose-pine": { "branch": "main", "commit": "ff483051a47e27d84bdef47703538df1ed9f4a47" },
   "schemastore.nvim": { "branch": "main", "commit": "8a1c2472b53269bb368d1ffc5edddccfc782e8bb" },
   "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" },
+  "vague.nvim": { "branch": "main", "commit": "49fe06ad33d8847b931ba4279197bda222374cd1" },
   "vim-tmux-navigator": { "branch": "master", "commit": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432" }
 }
