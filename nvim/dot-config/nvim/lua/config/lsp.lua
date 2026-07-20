@@ -1,6 +1,5 @@
 vim.lsp.enable {
 	'basedpyright',
-	'copilot',
 	'gopls',
 	'lua_ls',
 	'jsonls',
