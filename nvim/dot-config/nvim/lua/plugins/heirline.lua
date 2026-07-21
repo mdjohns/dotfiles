@@ -207,13 +207,15 @@ return {
 
 		local Tools = {
 			provider = function()
-				local list = require('util.list')
+				local list = require 'util.list'
 				local seen = {}
 				local names = {}
 
 				local ok_conform, conform = pcall(require, 'conform')
 				if ok_conform then
-					local formatter_names = vim.tbl_map(function(f) return f.name end, conform.list_formatters_to_run(0))
+					local formatter_names = vim.tbl_map(function(f)
+						return f.name
+					end, conform.list_formatters_to_run(0))
 					list.extend_unique(names, formatter_names, seen)
 				end
 
