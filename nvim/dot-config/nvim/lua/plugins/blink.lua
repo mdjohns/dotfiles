@@ -6,8 +6,6 @@ return {
 	build = 'cargo build --release',
 	dependencies = {
 		{ 'rafamadriz/friendly-snippets' },
-		{ 'giuxtaposition/blink-cmp-copilot' },
-		{ 'zbirenbaum/copilot.lua' },
 		{ 'folke/lazydev.nvim' },
 		{ 'moyiz/blink-emoji.nvim' },
 	},
@@ -20,7 +18,7 @@ return {
 			},
 		},
 		sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'lazydev', 'emoji' },
+			default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev', 'emoji' },
 			providers = {
 				path = {
 					opts = {
@@ -28,12 +26,6 @@ return {
 							return vim.fn.getcwd()
 						end,
 					},
-				},
-				copilot = {
-					name = 'copilot',
-					module = 'blink-cmp-copilot',
-					score_offset = 100,
-					async = true,
 				},
 				lazydev = {
 					module = 'lazydev.integrations.blink',
