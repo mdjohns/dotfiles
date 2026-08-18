@@ -3,6 +3,7 @@ vim.lsp.enable {
 	'gopls',
 	'lua_ls',
 	'jsonls',
+	'taplo',
 	'terraformls',
 	'vtsls',
 	'yamlls',
