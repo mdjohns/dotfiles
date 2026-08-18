@@ -1,0 +1,9 @@
+theme = dark:Rose Pine, light:Rose Pine Dawn
+font-family = "FantasqueSansM Nerd Font"
+font-size = 15
+macos-titlebar-style= "hidden"
+window-padding-y = 8,0
+window-padding-x = 8,0
+
+keybind = alt+backspace=text:\x1b\x7f
+keybind = shift+enter=text:\n
