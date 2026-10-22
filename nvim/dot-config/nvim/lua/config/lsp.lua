@@ -1,8 +1,9 @@
 vim.lsp.enable {
 	'basedpyright',
 	'gopls',
-	'lua_ls',
 	'jsonls',
+	'lua_ls',
+	'nextls',
 	'taplo',
 	'terraformls',
 	'vtsls',
