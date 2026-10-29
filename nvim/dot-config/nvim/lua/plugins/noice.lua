@@ -45,6 +45,19 @@ return {
 					},
 					opts = { skip = true },
 				},
+				{
+					filter = {
+						event = 'msg_show',
+						kind = 'echo',
+						any = {
+							{ find = '^Hunk %d+ of %d+$' },
+							{ find = '^First hunk %(1 of %d+%)$' },
+							{ find = '^Last hunk %(%d+ of %d+%)$' },
+							{ find = '^Conflict %d+ of %d+$' },
+						},
+					},
+					opts = { skip = true },
+				},
 			},
 		}
 	end,
